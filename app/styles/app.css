@@ -1,3 +1,24 @@
 html, body {
-  margin: 20px;
+  height: 100%;
+  /*margin: 20px;*/
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid #444;
+}
+
+.application,{
+  height: 100%;
+}
+
+.image-container {
+  width: 1024px;
+  height: 768px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
 }
