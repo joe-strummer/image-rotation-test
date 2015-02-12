@@ -19,6 +19,13 @@ export default Em.Component.extend({
     return height / width;
   }.property('height', 'width'),
 
+  parentAspectRatio: function() {
+    var height = this.get('parentHeight');
+    var width  = this.get('parentWidth');
+
+    return height / width;
+  }.property('parentHeight', 'parentWidth'),
+
   isPortrait: function() {
     return this.get('width') < this.get('height');
   }.property(),
@@ -30,8 +37,13 @@ export default Em.Component.extend({
   }.property('degrees'),
 
   src: function() {
-    return 'test.jpg';
-    //return 'noah.jpg';
+    //return 'test.jpg';
+    return 'noah.jpg';
+    //return 'noah2.jpg';
+    //return 'noah3.jpg';
+    //return 'noah4.jpg';
+    //return 'noah5.jpg';
+    //return 'noah6.jpg';
   }.property(),
 
   height: function() {
@@ -59,13 +71,20 @@ export default Em.Component.extend({
     }
 
     var scale = this.get('scale');
-    var aspectRatio = this.get('aspectRatio');
+    var aspectRatio = this.get('parentAspectRatio');
+    var isPortrait = this.get('isPortrait');
+    var ratio = aspectRatio;
+
+    if (isPortrait) {
+      ratio = 1 / aspectRatio;
+    }
 
     if (scale === 1) {
-      this.set('scale', aspectRatio);
+      this.set('scale', ratio);
     } else {
       this.set('scale', 1);
     }
+
     var height = this.get('height');
     var width  = this.get('width');
     var ph     = this.get('parentHeight');
