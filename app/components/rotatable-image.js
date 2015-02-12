@@ -31,6 +31,7 @@ export default Em.Component.extend({
 
   src: function() {
     return 'test.jpg';
+    //return 'noah.jpg';
   }.property(),
 
   height: function() {
