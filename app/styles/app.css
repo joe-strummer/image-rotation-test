@@ -16,12 +16,14 @@ header {
 .image-container {
   width: 1024px;
   height: 768px;
-  margin: 0 auto;
+  margin: 100px auto;
+  background-color: aqua;
   text-align: center;
   line-height: 768px;
 }
 
 img {
+  transition: all 0.3s;
   max-width: 100%;
   max-height: 100%;
   vertical-align: middle;
