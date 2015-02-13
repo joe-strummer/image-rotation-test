@@ -57,21 +57,18 @@ export default Em.Component.extend({
 
     if (virtualWidth > pw) {
       scale = pw / width;
-      this.set('scale', scale);
     } else if (virtualHeight > ph) {
       scale = ph / height;
-      this.set('scale', scale);
     } else if (virtualWidth < pw && virtualHeight < ph) {
       var widthDiff = pw - width;
       var heightDiff = ph - height;
       if (widthDiff > heightDiff) {
         scale = ph / height;
-        this.set('scale', scale);
       } else {
-        scale = pw/width;
-        this.set('scale', scale);
+        scale = pw / width;
       }
     }
+    this.set('scale', scale);
   },
 
   click: function() {
